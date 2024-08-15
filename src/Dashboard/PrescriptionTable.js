@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PrescriptionTable.css';
 
-const PrescriptionTable = () => {
+const PrescriptionTable = ({ userData }) => {
     const [prescriptions, setPrescriptions] = useState([]);
     const [healthCardId, setHealthCardId] = useState('');
     const [showModal, setShowModal] = useState(false);
@@ -10,6 +10,15 @@ const PrescriptionTable = () => {
     const [expiryDate, setExpiryDate] = useState('');
     const [cvv, setCvv] = useState('');
     const [amount, setAmount] = useState('');
+    const [pharmacist, setPharmacist] = useState(null);
+
+    useEffect(() => {
+        // Fetch pharmacist details on component mount
+        fetch(`http://localhost:8080/user/getPharmistDetails?userId=${userData.userId}`)
+            .then(response => response.json())
+            .then(data => setPharmacist(data))
+            .catch(error => console.error('Error fetching pharmacist details:', error));
+    }, [userData.userId]);
 
     const fetchPrescriptions = () => {
         fetch(`http://localhost:8080/healthcard/getPrescriptionByHealthIdPharmasist?health_card_id=${healthCardId}`)
@@ -36,34 +45,47 @@ const PrescriptionTable = () => {
         fetch(`http://localhost:8080/user/payment?prescriptionId=${selectedPrescriptionId}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 cardNumber,
                 expiryDate,
                 cvv,
-                amount
+                amount,
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Payment response:', data);
+
+                // Remove the prescription from the list
+                setPrescriptions(prevPrescriptions =>
+                    prevPrescriptions.filter(prescription =>
+                        prescription.prescription_id !== selectedPrescriptionId
+                    )
+                );
+
+                handleModalClose(); 
             })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Payment response:', data);
-
-            // Remove the prescription from the list
-            setPrescriptions(prevPrescriptions => 
-                prevPrescriptions.filter(prescription => 
-                    prescription.prescription_id !== selectedPrescriptionId
-                )
-            );
-
-            handleModalClose(); // Close the modal after submitting
-        })
-        .catch(error => console.error('Error submitting payment:', error));
+            .catch(error => console.error('Error submitting payment:', error));
     };
 
     return (
         <div style={{ padding: '20px' }}>
             <h2>Prescriptions</h2>
+
+            {pharmacist && (
+                <div>
+                    <h3>Pharmacist Details</h3>
+                    <p>Name: {userData.name}</p>
+                    <p>DoB: {userData.dob}</p>
+                    <p>Qualification: {pharmacist.qualification}</p>
+                    <p>GST Number: {pharmacist.gst_no}</p>
+
+
+                </div>
+            )}
+
             <div style={{ marginBottom: '20px' }}>
                 <input
                     type="text"

@@ -6,11 +6,21 @@ import './Doctor.css';
 
 const Doctor = ({ userData }) => {
     const [view, setView] = useState(null);
+    const [doctorDetails, setDoctorDetails] = useState(null); // State to store doctor details
     const navigate = useNavigate();
 
     useEffect(() => {
         if (!userData) {
             navigate('/login');
+        } else {
+            // Fetch doctor details if userData is available
+            fetch(`http://localhost:8080/user/getDoctorDetail?userId=${userData.userId}`)
+                .then(response => response.json())
+                .then(data => setDoctorDetails(data))
+                .catch(error => {
+                    console.error('Error fetching doctor details:', error);
+                    navigate('/login'); // Redirect to login on error
+                });
         }
     }, [userData, navigate]);
 
@@ -22,10 +32,9 @@ const Doctor = ({ userData }) => {
         setView('view');
     };
 
-    // Render content based on the view state
     const renderContent = () => {
-        if (!userData) {
-            return null; // Avoid rendering content if userData is not available
+        if (!userData || !doctorDetails) {
+            return null; 
         }
 
         switch (view) {
@@ -37,7 +46,14 @@ const Doctor = ({ userData }) => {
                 return (
                     <div>
                         <h2>Doctor Dashboard</h2>
-                        <p>Welcome, Dr. {userData.name}</p> {/* Display user name or other info */}
+                        <div className="doctor-card">
+                            <h3>{doctorDetails.name}</h3>
+                            <p><strong>NAme:</strong> {userData.name}</p>
+                            
+                            <p><strong>Licence:</strong> {doctorDetails.licence_no}</p>
+                            <p><strong>Qualification:</strong> {doctorDetails.qualification} years</p>
+                            <p><strong>Hospital</strong> {doctorDetails.hospitalName}</p>
+                        </div>
                         <button onClick={handleAddMedicalHistory} className="btn">
                             Add Medical History
                         </button>

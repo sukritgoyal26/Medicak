@@ -31,9 +31,10 @@ function App() {
                     path="/update-roll"
                     element={<UserRole />}
                 />
+                
                 <Route
                     path="/prescriptions"
-                    element={<PrescriptionTable />} // Ensure the route is inside <Routes>
+                    element={<PrescriptionTable userData={userData} />} // Pass userData to PrescriptionTable
                 />
 
                 <Route

@@ -19,6 +19,8 @@ const Login = ({ setUserData }) => {
             // Redirect based on user role
             if (response.data.role === "DOCTOR") {
                 navigate("/doctor"); // Pass user data to Doctor route
+            } else if (response.data.role === "PHARMACIST") {
+                navigate("/prescriptions"); // Redirect to PrescriptionTable
             } else {
                 navigate("/dashboard");
             }
@@ -54,11 +56,12 @@ const Login = ({ setUserData }) => {
                     />
                 </div>
                 {error && <div className="error-message">{error}</div>}
+                <div className="register-link">
                 <button type="submit">Login</button>
-            </form>
-            <div className="register-link">
                 <button onClick={handleRegister}>Register</button>
             </div>
+            </form>
+            
         </div>
     );
 };
