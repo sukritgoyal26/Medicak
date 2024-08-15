@@ -32,12 +32,12 @@ input[type="text"],
 input[type="number"],
 input[type="date"],
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
+width: 300px;
+    padding: 0.75rem;
     border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
     box-sizing: border-box;
 }
 
@@ -88,6 +88,7 @@ button[type="button"] {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
+    width: 200px;
 }
 
 button[type="button"]:hover {
@@ -101,7 +102,7 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    width: 200px;
     margin-top: 20px;
 }
 

@@ -19,11 +19,13 @@ h2 {
 }
 
 input[type="text"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
+width: 300px;
+    padding: 0.75rem;
     border-radius: 4px;
-    width: 200px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
 }
 
 button {

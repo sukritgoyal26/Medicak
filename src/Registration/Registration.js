@@ -77,7 +77,7 @@ const Registration = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Email ID:</label>
+                    <label >Email ID:</label>
                     <input 
                         type="email" 
                         value={emailId} 
@@ -112,12 +112,12 @@ const Registration = () => {
                         required 
                     />
                 </div>
-                <button type="submit">Register</button>
+                <div className="login-link">
+                <button type='button' className="btn" onClick={handleLoginRedirect}>Login</button>
+                <button type="submit" className='btn'>Register</button>
+            </div>
             </form>
             {message && <p>{message}</p>}
-            <div className="login-link">
-                <button onClick={handleLoginRedirect}>Login</button>
-            </div>
         </div>
     );
 };
