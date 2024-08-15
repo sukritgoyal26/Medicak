@@ -71,7 +71,7 @@ const PrescriptionTable = ({ userData }) => {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div className="Prescriptions-table" style={{ padding: '20px' }}>
             <h2>Prescriptions</h2>
 
             {pharmacist && (
@@ -86,7 +86,7 @@ const PrescriptionTable = ({ userData }) => {
                 </div>
             )}
 
-            <div style={{ marginBottom: '20px' }}>
+            <div className='search-box' style={{ marginBottom: '20px' }}>
                 <input
                     type="text"
                     value={healthCardId}
@@ -185,7 +185,7 @@ const PrescriptionTable = ({ userData }) => {
                                 />
                             </label>
                         </div>
-                        <div>
+                        <div className='search-box'>
                             <button className="cancel" onClick={handleModalClose}>Cancel</button>
                             <button onClick={handleSubmitPayment}>Submit</button>
                         </div>

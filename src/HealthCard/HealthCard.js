@@ -35,7 +35,7 @@ const HealthCard = ({ userId, onSuccess, onError }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="healthcard-form">
+        <form onSubmit={handleSubmit} id="healthcard-form">
             <h3>Generate Health Card</h3>
             <div>
                 <label>Blood Group:</label>

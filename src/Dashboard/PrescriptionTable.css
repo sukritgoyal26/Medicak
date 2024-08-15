@@ -52,7 +52,9 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
+p{
+    text-align: start;
+}
 /* Modal Styles */
 .modal-overlay {
     position: fixed;
@@ -71,7 +73,7 @@ button:hover {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 400px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -112,4 +114,20 @@ button:hover {
 
 .modal button.cancel:hover {
     background-color: #5a6268;
+}
+
+.Prescriptions-table{
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    border: 1px solid black;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }

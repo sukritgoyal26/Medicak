@@ -1,10 +1,9 @@
-.healthcard-form {
-    border: 1px solid #ddd;
-    padding: 20px;
+#healthcard-form {
+padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin-top: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 .healthcard-form h3 {
@@ -21,10 +20,13 @@
 }
 
 .healthcard-form input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
+    width: 300px;
+    padding: 0.75rem;
     border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
 }
 
 .healthcard-form button {

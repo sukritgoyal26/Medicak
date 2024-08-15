@@ -117,7 +117,7 @@ const Registration = () => {
                 <button type='button' className="btn" onClick={handleLoginRedirect}>Login</button>
             </div>
             </form>
-            {message && <p>{message}</p>}
+            {message && <p id="msg">{message}</p>}
         </div>
     );
 };
