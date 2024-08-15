@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("https://designstripe-secure.imgix.net/scene-snapshots/cc11d538-9eff-4362-a66b-d67266330e32/1637162893425/default?auto=format&h=1080&s=66b2e3632be12ada3c3ac3087086a1bb");
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,8 +20,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
     border: 1px solid black;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 h2 {

@@ -113,8 +113,8 @@ const Registration = () => {
                     />
                 </div>
                 <div className="login-link">
-                <button type='button' className="btn" onClick={handleLoginRedirect}>Login</button>
                 <button type="submit" className='btn'>Register</button>
+                <button type='button' className="btn" onClick={handleLoginRedirect}>Login</button>
             </div>
             </form>
             {message && <p>{message}</p>}
