@@ -1,0 +1,47 @@
+.healthcard-form {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 20px;
+}
+
+.healthcard-form h3 {
+    margin-top: 0;
+}
+
+.healthcard-form div {
+    margin-bottom: 15px;
+}
+
+.healthcard-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.healthcard-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.healthcard-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.healthcard-form button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.healthcard-form button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
