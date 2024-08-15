@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from 'react-router-dom'; // Import useLocation and useNavigate
-
+import './UserRole.css'
 const UserRole = () => {
     const [role, setRole] = useState('');
     const [qualification, setQualification] = useState('');
@@ -95,7 +95,7 @@ const UserRole = () => {
                     </>
                 )}
                 {role === 'PHARMACIST' && (
-                    <div>
+                    <div className="pharma">
                         <label htmlFor="gstNo">GST Number:</label>
                         <input
                             type="text"
@@ -104,7 +104,7 @@ const UserRole = () => {
                             onChange={(e) => setGstNo(e.target.value)}
                             required
                         />
-                        <div>
+                        
                             <label htmlFor="qualification">Qualification:</label>
                             <input
                                 type="text"
@@ -113,7 +113,7 @@ const UserRole = () => {
                                 onChange={(e) => setQualification(e.target.value)}
                                 required
                             />
-                        </div>
+                        
                     </div>
                 )}
                 <button type="submit">Update Role</button>
