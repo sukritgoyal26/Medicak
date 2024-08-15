@@ -13,7 +13,10 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
-    margin-bottom: 20px; /* Add margin to separate from health history section */
+    margin-bottom: 20px;
+    border: 1px solid black;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
 }
 
 .user-card h2 {
@@ -69,6 +72,9 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
 }
 
 .health-history h3 {

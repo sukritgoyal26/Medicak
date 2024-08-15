@@ -68,11 +68,14 @@ thead {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #cdd9f4;
+}
+tbody tr:nth-child(odd) {
+    background-color: #ffe1e1;
 }
 
 tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #ecf5fe;
 }
 
 /* UserHealthHistory.css */
