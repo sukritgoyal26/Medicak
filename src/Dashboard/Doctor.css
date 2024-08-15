@@ -1,8 +1,16 @@
 .doctor-container {
     text-align: center;
     padding: 20px;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
-
+        
 .btn {
     background-color: #007bff;
     color: white;

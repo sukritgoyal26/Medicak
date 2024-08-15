@@ -48,7 +48,7 @@ const Doctor = ({ userData }) => {
                         <h2>Doctor Dashboard</h2>
                         <div className="doctor-card">
                             <h3>{doctorDetails.name}</h3>
-                            <p><strong>NAme:</strong> {userData.name}</p>
+                            <p><strong>Name:</strong> {userData.name}</p>
                             
                             <p><strong>Licence:</strong> {doctorDetails.licence_no}</p>
                             <p><strong>Qualification:</strong> {doctorDetails.qualification} years</p>

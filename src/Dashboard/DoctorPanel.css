@@ -1,5 +1,6 @@
 .doctor-panel-container {
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -8,19 +9,13 @@
 }
 
 .doctor-panel-form {
-    max-width: 100%;
     width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 
-form div {
-    margin-bottom: 15px;
-}
 
 label {
     display: block;
@@ -48,11 +43,17 @@ textarea {
 
 /* Medicines section styling */
 .medicines {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-top: 10px;
 }
-
+#med-Quantity{
+    width: 100px;
+}
+#med-name{
+    width: 300px;
+}
 .medicine-header {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -66,7 +67,7 @@ textarea {
 .medicine-header-item {
     padding: 10px;
     text-align: center;
-    background-color: #e9ecef;
+    background-color: #a5f9cc;
     border-radius: 4px;
 }
 

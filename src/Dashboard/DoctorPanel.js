@@ -67,7 +67,8 @@ const DoctorPanel = () => {
     return (
         <div className="doctor-panel-container">
             <form onSubmit={handleSubmit} className="doctor-panel-form">
-                <div>
+                <h1>Add Prescription </h1>
+                <div className="form-group">
                     <label>Health Card ID:</label>
                     <input 
                         type="number" 
@@ -76,7 +77,7 @@ const DoctorPanel = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Description:</label>
                     <textarea 
                         value={description}
@@ -84,7 +85,7 @@ const DoctorPanel = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Diagnosed Date:</label>
                     <input 
                         type="date" 
@@ -93,7 +94,7 @@ const DoctorPanel = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Doctor Name:</label>
                     <input 
                         type="text" 
@@ -103,12 +104,12 @@ const DoctorPanel = () => {
                     />
                 </div>
    
-                <div>
+                <div >
                     <label>Medicines:</label>
                     <div className="medicines">
                         <div className="medicine-header">
-                            <div className="medicine-header-item">Medicine Name</div>
-                            <div className="medicine-header-item">Quantity</div>
+                            <div className="medicine-header-item" id='med-name'>Medicine Name</div>
+                            <div className="medicine-header-item" id='med-Quantity'>Quantity</div>
                         </div>
                         {medicines.map((medicine, index) => (
                             <div key={index} className="medicine-entry">
@@ -120,6 +121,7 @@ const DoctorPanel = () => {
                                     required
                                 />
                                 <input 
+                                    id='med-Quantity'
                                     type="number" 
                                     placeholder="Quantity"
                                     value={medicine.qty}

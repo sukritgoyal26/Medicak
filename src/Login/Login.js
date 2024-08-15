@@ -38,7 +38,7 @@ const Login = ({ setUserData }) => {
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Email</label>
+                    <label>Email : </label>
                     <input
                         type="email"
                         value={emailId}
@@ -47,7 +47,7 @@ const Login = ({ setUserData }) => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Password</label>
+                    <label>Password : </label>
                     <input
                         type="password"
                         value={password}
